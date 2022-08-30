@@ -33,7 +33,7 @@ contract QuickAuction is ERC721URIStorage {
     /* Check if the auction has ended */
     modifier isTimeUp(uint256 _id) {
         if (
-            block.timestamp > auctions[_id].endTime && !auctions[_id].isActive
+            block.timestamp > auctions[_id].endTime && auctions[_id].isActive
         ) {
             auctions[_id].isActive = false;
         }
