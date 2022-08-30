@@ -154,7 +154,7 @@ contract QuickAuction is ERC721URIStorage {
     }
 
     /* Get details of all auctions*/
-    function getActiveAuctions() external view returns (Auction[] memory) {
+    function getAuctions() external view returns (Auction[] memory) {
         uint auctionsCount = _tokenIds.current();
         Auction[] memory allAuctions = new Auction[](auctionsCount);
         for (uint256 i = 0; i < auctionsCount; i++) {
